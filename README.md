@@ -1,7 +1,7 @@
 # React
 
-##RUN PROJECT 
+## RUN PROJECT 
 
-###npm i
+### npm i
 
-###npm run dev
+### npm run dev
