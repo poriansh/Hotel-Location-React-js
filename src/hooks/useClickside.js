@@ -1,15 +1,18 @@
 import {useEffect} from "react";
 
-function useClickside(ref,cb,exptionid) {
+function useClickside(ref, cb, exeption, listenCapturing = true) {
   useEffect(() => {
-      document.body.addEventListener("click", (e) => {
+    function handleClick(e) {
+      if (ref.current && !ref.current.contains(e.target) && e.target.id !== exeption) {
+        cb();
+      }
+    }
 
-        if (ref.current && !ref.current.contains(e.target) && e.target.id !== exptionid) {
-            cb()
-        }
-    });
-  }, [ref,cb,exptionid]);
-  return ;
+    document.addEventListener("click", handleClick, listenCapturing);
+
+    return () => document.removeEventListener("click", handleClick, listenCapturing);
+  }, [cb, listenCapturing]);
+  return;
 }
 
 export default useClickside;
