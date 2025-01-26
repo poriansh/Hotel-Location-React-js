@@ -11,7 +11,7 @@ function Hotel() {
       <h2>Search Results ({hotels.length})</h2>
       {hotels.map((item) => {
         return (
-          <Link key={item.id} to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}>
+          <Link key={item.id} to={`/Hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}>
             <div className={`searchItem ${item.id === currenthotel?.id ? "current-hotel" : ""}`}>
               <img src={item.thumbnail_url} alt={item.name} />
               <div className="searchItemDesc">
