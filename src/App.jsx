@@ -1,7 +1,7 @@
 
 import { Toaster } from "react-hot-toast";
-import "./App.css";
-import Header from "./components/Header";
+import "./style/App.css";
+import Header from "./ui/Header";
 import Locations from "./components/Locations";
 import { Route, Routes } from "react-router-dom";
 import Appleyout from "./components/Appleyout";
