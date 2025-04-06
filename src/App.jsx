@@ -2,7 +2,6 @@
 import { Toaster } from "react-hot-toast";
 import "./style/App.css";
 import Header from "./ui/Header";
-import Locations from "./components/Locations";
 import { Route, Routes } from "react-router-dom";
 import Appleyout from "./components/Appleyout";
 import Hotel from "./components/Hotel";
@@ -13,6 +12,7 @@ import Bookprovider from "./context/Bookprovider";
 import Bookmark from "./components/Bookmark";
 import SingleBookmark from "./components/SingleBookmark";
 import Addbookmark from "./components/Addbookmark";
+import Home from "./page/Home";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Toaster />
         <Header />
         <Routes>
-          <Route path="/" element={<Locations />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Hotels" element={<Appleyout />}>
             <Route index element={<Hotel />} />
             <Route path=":id" element={<Singlehotel />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path="/bookmark" element={<Bookmarkleyout />}>
             <Route index element={<Bookmark />} />
             <Route path=":id" element={<SingleBookmark />} />
-            <Route path="add" element={<Addbookmark/>} />
+            <Route path="add" element={<Addbookmark />} />
           </Route>
         </Routes>
       </Hotelprovider>

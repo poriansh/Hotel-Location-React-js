@@ -1,8 +1,8 @@
 import {CalendarDaysIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 import {useReducer, useRef, useState} from "react";
 import {MdLocationOn} from "react-icons/md";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
+// import "react-date-range/dist/styles.css"; // main style file
+// import "react-date-range/dist/theme/default.css"; // theme css file
 
 import {NavLink} from "react-router-dom";
 import useClickside from "../hooks/useClickside";
@@ -104,7 +104,7 @@ function optionReducer(option, {type, payload}) {
     case "inc":
       return {
         ...option,
-        [payload]: option[payload] + 1, // افزایش مقدار
+        [payload]: option[payload] + 1, // کاهش  مقدار
       };
     case "dec":
       return {

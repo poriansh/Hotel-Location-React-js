@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useBook } from "../context/Bookprovider";
 import ReactCountryFlag from "react-country-flag";
-import Loader from "./Loader";
+import Loader from "../ui/Loader";
+
 
 
 function SingleBookmark() {

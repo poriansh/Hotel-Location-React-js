@@ -1,17 +1,15 @@
 import {createContext, useContext, useState} from "react";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../Feature/Hotels/useHotels";
 import {useSearchParams} from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 const Hotelcontext = createContext();
 const BASE_URL = "http://localhost:5000/hotels";
 
-
-
-function Hotelprovider({ children }) {
-  const [currenthotel, setcurrenthotel] = useState({})
+function Hotelprovider({children}) {
+  const [currenthotel, setcurrenthotel] = useState({});
   const [isLoadingcurrenthotel, setisLoadingcurrenthotel] = useState(false);
-  
+
   const [searchparams] = useSearchParams();
   const destination = searchparams.get("destination");
   const room = JSON.parse(searchparams.get("options"))?.room;
@@ -20,18 +18,16 @@ function Hotelprovider({ children }) {
     `q=${destination || ""}&accommodates_gte=${room || 1}`
   );
   async function getHotel(id) {
-    
     try {
-      setisLoadingcurrenthotel(true)
-      const { data } = await axios.get(`${BASE_URL}/${id}`)
-      setcurrenthotel(data)
+      setisLoadingcurrenthotel(true);
+      const {data} = await axios.get(`${BASE_URL}/${id}`);
+      setcurrenthotel(data);
     } catch (error) {
       setisLoadingcurrenthotel(false);
-      toast.error(error.massage)
+      toast.error(error.massage);
     } finally {
       setisLoadingcurrenthotel(false);
     }
-
   }
   return (
     <Hotelcontext.Provider

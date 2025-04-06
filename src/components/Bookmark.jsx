@@ -1,8 +1,9 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useBook} from "../context/Bookprovider";
-import Loader from "./Loader";
+
 import ReactCountryFlag from "react-country-flag";
 import {TrashIcon} from "@heroicons/react/20/solid";
+import Loader from "../ui/Loader";
 
 function Bookmark() {
 

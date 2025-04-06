@@ -1,7 +1,8 @@
 import {useNavigate, useParams} from "react-router-dom";
-import Loader from "./Loader";
+
 import {useHotel} from "../context/Hotelprovider";
 import { useEffect } from "react";
+import Loader from "../ui/Loader";
 
 function Singlehotel() {
   const {id} = useParams();

@@ -3,10 +3,11 @@ import ReactCountryFlag from "react-country-flag";
 import {useNavigate} from "react-router-dom";
 
 import axios from "axios";
-import Loader from "./Loader.jsx";
+
 import toast from "react-hot-toast";
 import {useBook} from "../context/Bookprovider.jsx";
 import useUrlLocation from "../hooks/useUrlLocation.js";
+import Loader from "../ui/Loader.jsx";
 
 const BASE_GEOCODING_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 function Addbookmark() {

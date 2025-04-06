@@ -1,15 +1,16 @@
-import axios from "axios";
+
 import {useEffect, useState} from "react";
 import toast from "react-hot-toast";
+import { getHotels } from "../../services/HotelServic";
 
-function useFetch(url,query = "") {
+function useHotels(url,query = "") {
   const [data, setdata] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const {data} = await axios.get(`${url}?${query}`);
+        const {data} = await getHotels();
         setdata(data); 
         setIsLoading(false);
       } catch (err) {
@@ -25,4 +26,4 @@ function useFetch(url,query = "") {
   return {data,isLoading};
 }
 
-export default useFetch;
+export default useHotels;

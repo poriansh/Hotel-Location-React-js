@@ -1,6 +1,7 @@
 import {Link, useNavigate} from "react-router-dom";
-import Loader from "./Loader";
+
 import { useHotel } from "../context/Hotelprovider";
+import Loader from "../ui/Loader";
 
 function Hotel() {
   const navigate = useNavigate()
