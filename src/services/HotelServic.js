@@ -1,6 +1,6 @@
 import http from "./httpservic";
 
 
-export function getHotels() {
-  return http.get(`/hotels`)
+export function getHotels(query) {
+  return http.get(`/hotels?${query}`);
 }

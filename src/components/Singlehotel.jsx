@@ -1,30 +1,29 @@
-import {useNavigate, useParams} from "react-router-dom";
+// import {useNavigate, useParams} from "react-router-dom";
 
-import {useHotel} from "../context/Hotelprovider";
-import { useEffect } from "react";
-import Loader from "../ui/Loader";
+
+// import { useEffect } from "react";
+// import Loader from "../ui/Loader";
 
 function Singlehotel() {
-  const {id} = useParams();
-  const {currenthotel, getHotel, isLoadingcurrenthotel} = useHotel();
-  const navigate = useNavigate()
-  useEffect(() => {
+  // const {id} = useParams();
+  // const navigate = useNavigate()
+  // useEffect(() => {
     
-    getHotel(id)
+  //   getHotel(id)
 
-  },[id])
+  // },[id])
 
-  if (isLoadingcurrenthotel) return <Loader />;
+  // if (isLoadingcurrenthotel) return <Loader />;
   return (
     <div className="room">
       <div className="roomDetail">
-      <button onClick={() => navigate(-1)} className="btn btn--back">
+      <button  className="btn btn--back">
         &larr; Back
       </button>
-        <img src={currenthotel.xl_picture_url} alt={currenthotel.name} />
-        <h2>{currenthotel.name}</h2>
+        {/* <img   /> */}
+        <h2>test</h2>
         <div>
-          {currenthotel.number_of_reviews} reviews &bull; {currenthotel.smart_location}
+          test
         </div>
       </div>
     </div>

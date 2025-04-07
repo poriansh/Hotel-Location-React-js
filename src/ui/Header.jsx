@@ -1,39 +1,47 @@
 import {CalendarDaysIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 import {useReducer, useRef, useState} from "react";
 import {MdLocationOn} from "react-icons/md";
-// import "react-date-range/dist/styles.css"; // main style file
-// import "react-date-range/dist/theme/default.css"; // theme css file
-
-import {NavLink} from "react-router-dom";
+import {createSearchParams, NavLink, useNavigate} from "react-router-dom";
 import useClickside from "../hooks/useClickside";
+
+function optionReducer(option, {type, payload}) {
+  switch (type) {
+    case "inc":
+      return {
+        ...option,
+        [payload]: option[payload] + 1, // کاهش  مقدار
+      };
+    case "dec":
+      return {
+        ...option,
+        [payload]: option[payload] - 1, // افزایش مقدار
+      };
+    default:
+      return option;
+  }
+}
 
 function Header() {
   const [openOption, setopenoption] = useState(false);
   const [searchvalue, setsearchvalue] = useState("");
-  // const navigate = useNavigate();
-
-  // const [date, setdate] = useState([
-  //   {
-  //     startDate: new Date(),
-  //     endDate: new Date(),
-  //     key: "selection",
-  //   },
-  // ]);
+  const navigate = useNavigate();
+  const [option, dispatch] = useReducer(optionReducer, {
+    children: 0,
+    room: 1,
+  });
   // const [openDate, setOpendate] = useState(false);
-  // const handelsearch = () => {
-  //   const enCodedParams = createSearchParams({
-  //     date: JSON.stringify(date),
-  //     destination: destination,
-  //     options: JSON.stringify(options),
-  //   });
-  //   navigate({
-  //     pathname: "/Hotels",
-  //     search: enCodedParams.toString(),
-  //   });
-  // };
-
   // const dateref = useRef()
   // useClickside(dateref, () => setOpendate(false), "dateDropdown1");
+
+  const handelsearch = () => {
+    const enCodedParams = createSearchParams({
+      // date: JSON.stringify(date),
+      searchvalue: searchvalue,
+      room: JSON.stringify(option.room),
+    });
+   navigate(`/Hotels?${enCodedParams}`);
+  };
+
   return (
     <div className="header">
       <NavLink to={"/"}>Home</NavLink>
@@ -73,11 +81,13 @@ function Header() {
           <div id="optionDropdown" onClick={() => setopenoption(!openOption)}>
             1.children 2.room
           </div>
-          {openOption && <SearchOption setopenoption={setopenoption} />}
+          {openOption && (
+            <SearchOption option={option} dispatch={dispatch} setopenoption={setopenoption} />
+          )}
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <button className="headerSearchBtn">
+          <button onClick={handelsearch} className="headerSearchBtn">
             <MagnifyingGlassIcon className="icon" />
           </button>
         </div>
@@ -88,39 +98,18 @@ function Header() {
 
 export default Header;
 
-function SearchOption({ setopenoption}) {
+function SearchOption({option, dispatch, setopenoption}) {
   const ref = useRef();
   useClickside(ref, () => setopenoption(false), "optionDropdown");
   return (
     <div className="guestOptions" ref={ref}>
-      <Optionitem  type="children"  minLimit={0} />
-      <Optionitem  type="room"  minLimit={1} />
+      <Optionitem option={option} dispatch={dispatch} type="children" minLimit={0} />
+      <Optionitem option={option} dispatch={dispatch} type="room" minLimit={1} />
     </div>
   );
 }
 
-function optionReducer(option, {type, payload}) {
-  switch (type) {
-    case "inc":
-      return {
-        ...option,
-        [payload]: option[payload] + 1, // کاهش  مقدار
-      };
-    case "dec":
-      return {
-        ...option,
-        [payload]: option[payload] - 1, // افزایش مقدار
-      };
-    default:
-      return option;
-  }
-}
-
-function Optionitem({ type, minLimit}) {
-  const [option, dispatch] = useReducer(optionReducer, {
-    children: 0,
-    room: 1,
-  });
+function Optionitem({type, minLimit, option, dispatch}) {
   return (
     <div className="guestOptionItem">
       <span className="optionText">{type}</span>

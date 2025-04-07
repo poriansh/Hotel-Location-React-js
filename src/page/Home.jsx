@@ -1,10 +1,8 @@
-
-
-import useHotels from "../Feature/Hotels/useHotels";
+import useHotels from "../Feature/Hotel/useHotels";
 import Loader from "../ui/Loader";
 
 function Home() {
-  const { data, isLoading } = useHotels();
+  const {data, isLoading} = useHotels();
 
   if (isLoading) return <Loader />;
   return (

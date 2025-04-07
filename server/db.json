@@ -13,6 +13,8 @@
       "latitude": "48.56",
       "longitude": "2.35",
       "price": 50,
+      "accommodates": 3, 
+      "children"  : 2,
       "jurisdiction_names": "Amsterdam",
       "geolocation": {
         "lon": 2.35,

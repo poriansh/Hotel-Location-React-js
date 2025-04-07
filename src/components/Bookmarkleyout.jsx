@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Map from "./Map";
+
 import { useBook } from "../context/Bookprovider";
+import Map from "../Feature/map/Map";
 
 
 function Bookmarkleyout() {
