@@ -6,10 +6,8 @@ function Hotels() {
   const [searchparams] = useSearchParams();
   const searchvalue = searchparams.get("searchvalue");
   const room = searchparams.get("room");
-
   const hasParams = searchparams.toString().length > 0;
-
-  const query = hasParams ? `${searchvalue ? `q=${searchvalue}&` : ""}accommodates=${room}` : "";
+  const query = hasParams ? `${searchvalue ? `q=${searchvalue}&` : ""} accommodates=${room}` : "";
   const {isLoading, data} = useHotels(query);
 
   if (isLoading) return <Loader />;
