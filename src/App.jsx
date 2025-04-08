@@ -1,34 +1,38 @@
+import {Suspense, lazy} from "react";
 import {Toaster} from "react-hot-toast";
+import {Route, Routes} from "react-router-dom";
 import "./style/App.css";
 import Header from "./ui/Header";
-import {Route, Routes} from "react-router-dom";
-import Hotel from "./Feature/Hotel/Hotel";
-import Singlehotel from "./components/Singlehotel";
-import Bookmarkleyout from "./components/Bookmarkleyout";
 import Bookprovider from "./context/Bookprovider";
-import Bookmark from "./components/Bookmark";
-import SingleBookmark from "./components/SingleBookmark";
-import Addbookmark from "./components/Addbookmark";
-import Home from "./page/Home";
-import HotelLeyout from "./page/HotelLeyout";
+import LoaderPage from "./ui/LoaderPage";
+import {delayImport} from "./utils/delayLoading";
+
+const Hotels = lazy(() => delayImport(() => import("./Feature/Hotel/Hotels"), 1000));
+
+const Singlehotel = lazy(() => delayImport(() => import("./components/Singlehotel"), 1000));
+const Bookmarkleyout = lazy(() => delayImport(() => import("./components/Bookmarkleyout"), 1000));
+const Bookmark = lazy(() => delayImport(() => import("./components/Bookmark"), 1000));
+const SingleBookmark = lazy(() => delayImport(() => import("./components/SingleBookmark"), 1000));
+const Addbookmark = lazy(() => delayImport(() => import("./components/Addbookmark"), 1000));
+
+// Simple fallback UI
 
 function App() {
   return (
     <Bookprovider>
-        <Toaster />
+      <Toaster />
+      <Suspense fallback={<LoaderPage />}>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Hotels" element={<HotelLeyout />}>
-            <Route index element={<Hotel />} />
-            <Route path=":id" element={<Singlehotel />} />
-          </Route>
+          <Route path="/" element={<Hotels />} />
+          <Route path="/Hotel/:id" element={<Singlehotel />} />
           <Route path="/bookmark" element={<Bookmarkleyout />}>
             <Route index element={<Bookmark />} />
             <Route path=":id" element={<SingleBookmark />} />
             <Route path="add" element={<Addbookmark />} />
           </Route>
         </Routes>
+      </Suspense>
     </Bookprovider>
   );
 }

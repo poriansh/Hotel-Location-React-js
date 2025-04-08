@@ -39,7 +39,7 @@ function Header() {
       searchvalue: searchvalue,
       room: JSON.stringify(option.room),
     });
-   navigate(`/Hotels?${enCodedParams}`);
+   navigate(`/?${enCodedParams}`);
   };
 
   return (

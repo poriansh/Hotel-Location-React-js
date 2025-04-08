@@ -1,6 +1,6 @@
 import {LoaderIcon} from "react-hot-toast";
 
-function Loader() {
+export default function LoaderPage() {
   return (
     <div
       style={{
@@ -9,13 +9,11 @@ function Loader() {
         justifyContent: "center",
         alignItems: "center",
         gap: "1rem",
-        margin: "3rem auto",
+        maxHeight: "90vh",
+        height: "100vh",
       }}
     >
-      <p> Loading Data...</p>
       <LoaderIcon style={{width: "1.3rem", height: "1.3rem"}} />
     </div>
   );
 }
-
-export default Loader;
