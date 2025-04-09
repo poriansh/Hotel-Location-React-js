@@ -4,14 +4,12 @@ import toast from "react-hot-toast";
 import { getHotelsId } from "../../services/HotelServic";
 
 function useHotelId(id) {
-  const [data, setdata] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [data, setdata] = useState([]);  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const {data} = await getHotelsId(id);
-        console.log(data)
+        const { data } = await getHotelsId(id);
         setdata(data); 
         setIsLoading(false);
       } catch (err) {
@@ -24,7 +22,7 @@ function useHotelId(id) {
     fetchData();
   }, [id]);
 
-  return {data,isLoading};
+  return {data, isLoading};
 }
 
 export default useHotelId;

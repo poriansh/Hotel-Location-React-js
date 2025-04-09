@@ -1,15 +1,15 @@
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 
 
-function Bookmarkleyout() {
+// function Bookmarkleyout() {
 
-  return (
-    <div className="appLayout">
-      <div className="sidebar">
-        <Outlet />
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="appLayout">
+//       <div className="sidebar">
+//         <Outlet />
+//       </div>
+//     </div>
+//   );
+// }
 
-export default Bookmarkleyout;
+// export default Bookmarkleyout;

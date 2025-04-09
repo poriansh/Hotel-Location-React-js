@@ -6,23 +6,15 @@
       "thumbnail_url": "./public/img/1.jpg",
       "xl_picture_url": "/public/img/1.jpg",
       "city": "Amsterdam",
-      "market": "Amsterdam",
       "smart_location": "Amsterdam, Netherlands",
-      "country_code": "NL",
       "country": "Netherlands",
-      "latitude": "48.56",
-      "longitude": "2.35",
       "price": 50,
-      "accommodates": 3, 
-      "children"  : 2,
-      "jurisdiction_names": "Amsterdam",
-      "geolocation": {
-        "lon": 2.35,
-        "lat": 48.86
-      }
+      "accommodates": 2, 
+      "children"  : 5
     },
     {
       "id": "9192415",
+      "children"  : 2,
       "listing_url": "https://www.airbnb.com/rooms/9192415",
       "scrape_id": "20170402075052",
       "last_scraped": "2017-04-02",
@@ -164,6 +156,7 @@
     },
     {
       "id": "743788",
+      "children": 3,
       "listing_url": "https://www.airbnb.com/rooms/743788",
       "scrape_id": "20170402075052",
       "last_scraped": "2017-04-02",
@@ -210,11 +203,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 3,
       "host_total_listings_count": 3,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews"
-      ],
+      "host_verifications": ["email", "phone", "reviews"],
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -283,13 +272,11 @@
         "lon": 4.875639539930118,
         "lat": 52.36456756846072
       },
-      "features": [
-        "Host Has Profile Pic",
-        "Is Location Exact"
-      ]
+      "features": ["Host Has Profile Pic", "Is Location Exact"]
     },
     {
       "id": "13153299",
+      "children": 4,
       "listing_url": "https://www.airbnb.com/rooms/13153299",
       "scrape_id": "20170402075052",
       "last_scraped": "2017-04-02",
@@ -423,14 +410,11 @@
         "lon": 4.8740486118580595,
         "lat": 52.36464636933365
       },
-      "features": [
-        "Host Has Profile Pic",
-        "Host Identity Verified",
-        "Is Location Exact"
-      ]
+      "features": ["Host Has Profile Pic", "Host Identity Verified", "Is Location Exact"]
     },
     {
       "id": "277011",
+      "children": 6,
       "listing_url": "https://www.airbnb.com/rooms/277011",
       "scrape_id": "20170402075052",
       "last_scraped": "2017-04-02",
@@ -478,13 +462,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 1,
       "host_total_listings_count": 1,
-      "host_verifications": [
-        "email",
-        "phone",
-        "facebook",
-        "reviews",
-        "work_email"
-      ],
+      "host_verifications": ["email", "phone", "facebook", "reviews", "work_email"],
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -552,11 +530,7 @@
         "lon": 4.859091947726598,
         "lat": 52.358295084395394
       },
-      "features": [
-        "Host Has Profile Pic",
-        "Is Location Exact",
-        "Instant Bookable"
-      ]
+      "features": ["Host Has Profile Pic", "Is Location Exact", "Instant Bookable"]
     },
     {
       "id": "13531067",
@@ -686,6 +660,7 @@
     },
     {
       "id": "13465532",
+      "children": 3,
       "listing_url": "https://www.airbnb.com/rooms/13465532",
       "scrape_id": "20170402075052",
       "last_scraped": "2017-04-02",
@@ -733,13 +708,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 1,
       "host_total_listings_count": 1,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews",
-        "jumio",
-        "government_id"
-      ],
+      "host_verifications": ["email", "phone", "reviews", "jumio", "government_id"],
       "street": "Oud-West, Amsterdam, Noord-Holland 1054 DM, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -809,14 +778,11 @@
         "lon": 4.871988086041219,
         "lat": 52.36375757335638
       },
-      "features": [
-        "Host Has Profile Pic",
-        "Host Identity Verified",
-        "Is Location Exact"
-      ]
+      "features": ["Host Has Profile Pic", "Host Identity Verified", "Is Location Exact"]
     },
     {
       "id": "7890890",
+      "children": 1,
       "listing_url": "https://www.airbnb.com/rooms/7890890",
       "scrape_id": "20170402075052",
       "last_scraped": "2017-04-02",
@@ -864,12 +830,7 @@
       "host_neighbourhood": "Oud-West",
       "host_listings_count": 1,
       "host_total_listings_count": 1,
-      "host_verifications": [
-        "email",
-        "phone",
-        "reviews",
-        "jumio"
-      ],
+      "host_verifications": ["email", "phone", "reviews", "jumio"],
       "street": "Oud-West, Amsterdam, Noord-Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -948,22 +909,8 @@
         "lon": 4.876026104903436,
         "lat": 52.3651869694861
       },
-      "features": [
-        "Host Has Profile Pic",
-        "Host Identity Verified",
-        "Is Location Exact"
-      ]
-    }
-  ],
-  "bookmarks": [
-    {
-      "cityName": "Wignehies",
-      "country": "France",
-      "countryCode": "FR",
-      "latitude": "50.006390889712485",
-      "longitude": "3.9852260932383796",
-      "host_location": "Wignehies France",
-      "id": 1
+      "features": ["Host Has Profile Pic", "Host Identity Verified", "Is Location Exact"]
     }
   ]
+
 }

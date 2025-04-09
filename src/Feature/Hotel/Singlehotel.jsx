@@ -10,20 +10,20 @@ function Singlehotel() {
   return (
     <div className="room">
       <div className="roomDetail">
-        <button onClick={() => navigate(-1)} className="btn btn--back">
+        <button onClick={() => navigate("/", {state: {viewedId: id}})} className="btn btn--back">
           &larr; Back
         </button>
         <div className="locationItem singlehotel">
-        <img src={Hotel.xl_picture_url} alt={Hotel.name} />
-        <div className="locationItemDesc">
-          <p className="locaiton">{Hotel.smart_location}</p>
-          <p className="name">{Hotel.name}</p>
-          <p className="price">
-            €&nbsp;{Hotel.price}&nbsp;
-            <span>night</span>
-          </p>
+          <img src={Hotel.xl_picture_url} alt={Hotel.name} />
+          <div className="locationItemDesc">
+            <p className="locaiton">{Hotel.smart_location}</p>
+            <p className="name">{Hotel.name}</p>
+            <p className="price">
+              €&nbsp;{Hotel.price}&nbsp;
+              <span>night</span>
+            </p>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

@@ -26,7 +26,6 @@ function Header() {
   const [searchvalue, setsearchvalue] = useState("");
   const navigate = useNavigate();
   const [option, dispatch] = useReducer(optionReducer, {
-    children: 0,
     room: 1,
   });
   // const [openDate, setOpendate] = useState(false);
@@ -79,7 +78,7 @@ function Header() {
         </div>
         <div className="headerSearchItem">
           <div id="optionDropdown" onClick={() => setopenoption(!openOption)}>
-            1.children 2.room
+            room
           </div>
           {openOption && (
             <SearchOption option={option} dispatch={dispatch} setopenoption={setopenoption} />
@@ -103,7 +102,6 @@ function SearchOption({option, dispatch, setopenoption}) {
   useClickside(ref, () => setopenoption(false), "optionDropdown");
   return (
     <div className="guestOptions" ref={ref}>
-      <Optionitem option={option} dispatch={dispatch} type="children" minLimit={0} />
       <Optionitem option={option} dispatch={dispatch} type="room" minLimit={1} />
     </div>
   );

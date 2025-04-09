@@ -1,4 +1,4 @@
-import {Link, useSearchParams} from "react-router-dom";
+import {Link, useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import useHotels from "./useHotels";
 import Loader from "../../ui/Loader";
 
@@ -8,15 +8,23 @@ function Hotels() {
   const room = searchparams.get("room");
   const hasParams = searchparams.toString().length > 0;
   const query = hasParams ? `${searchvalue ? `q=${searchvalue}&` : ""}accommodates=${room}` : "";
-  const {isLoading, data} = useHotels(query);
-
+  const { isLoading, data: Hotels } = useHotels(query);
+  const navigate= useNavigate()
+  const location = useLocation();
+  const viewedId = location.state?.viewedId;
   if (isLoading) return <Loader />;
   return (
     <div className="nearbyLocation">
-      <h2>Nearby Locations</h2>
+      <div className="navlocation-werraper ">
+        <h2>Nearby Locations</h2>
+        <button onClick={() => navigate("/Hotel/add")} className="btn btn--back">
+          {" "}
+          Add Hotel
+        </button>
+      </div>
       <div className="locationList">
-        {data.map((item) => {
-          return <Hotelsitem key={item.id} item={item} />;
+        {Hotels.map((item) => {
+          return <Hotelsitem key={item.id} item={item} viewedId={viewedId} />;
         })}
       </div>
     </div>
@@ -25,10 +33,13 @@ function Hotels() {
 
 export default Hotels;
 
-function Hotelsitem({item}) {
+function Hotelsitem({item, viewedId}) {
   return (
     <Link to={`Hotel/${item.id}`}>
-      <div className="locationItem" key={item.id}>
+      <div
+        className={`locationItem ${item.id === viewedId ? "locationItem--view" : ""}`}
+        key={item.id}
+      >
         <img src={item.thumbnail_url} alt={item.name} />
         <div className="locationItemDesc">
           <p className="locaiton">{item.smart_location}</p>

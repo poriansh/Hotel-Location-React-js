@@ -19,6 +19,9 @@
 #optionDropdown {
   cursor: pointer;
   position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.249);
+  border-radius: 0.4rem ;
+  padding: 0.3rem 0.8rem;
 }
 .headerSearchInput {
   padding: 0.7rem 0.5rem;
@@ -123,9 +126,6 @@
 .nearbyLocation {
   max-width: 1280px;
   margin: 2rem auto;
-}
-.nearbyLocation h2 {
-  margin-bottom: 1rem;
 }
 .locationList {
   display: grid;
@@ -390,6 +390,11 @@ a.active {
 .active{
   color: blue;
 }
+.locationItem--view{
+  border:  3px rgba(92, 7, 195, 0.532) solid;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
 @media (min-width : 600px){
   .locationList{
     grid-template-columns: repeat(2,1fr);
@@ -412,4 +417,10 @@ a.active {
 }
 .singlehotel .locationItemDesc{
   flex-grow: 1;
+}
+.navlocation-werraper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
