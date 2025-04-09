@@ -11,7 +11,7 @@ function useHotels(query = "") {
       try {
         setIsLoading(true);
         const {data} = await getHotels(query);
-        
+        console.log(data)
         setdata(data); 
         setIsLoading(false);
       } catch (err) {

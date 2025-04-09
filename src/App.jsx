@@ -7,9 +7,9 @@ import Bookprovider from "./context/Bookprovider";
 import LoaderPage from "./ui/LoaderPage";
 import {delayImport} from "./utils/delayLoading";
 
-const Hotels = lazy(() => delayImport(() => import("./Feature/Hotel/Hotels"), 1000));
+const Hotels = lazy(() => delayImport(() => import("./Feature/Hotels/Hotels"), 1000));
 
-const Singlehotel = lazy(() => delayImport(() => import("./components/Singlehotel"), 1000));
+const Singlehotel = lazy(() => delayImport(() => import("./Feature/Hotel/Singlehotel"), 1000));
 const Bookmarkleyout = lazy(() => delayImport(() => import("./components/Bookmarkleyout"), 1000));
 const Bookmark = lazy(() => delayImport(() => import("./components/Bookmark"), 1000));
 const SingleBookmark = lazy(() => delayImport(() => import("./components/SingleBookmark"), 1000));
