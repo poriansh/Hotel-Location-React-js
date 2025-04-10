@@ -28,9 +28,6 @@ function Header() {
   const [option, dispatch] = useReducer(optionReducer, {
     room: 1,
   });
-  // const [openDate, setOpendate] = useState(false);
-  // const dateref = useRef()
-  // useClickside(dateref, () => setOpendate(false), "dateDropdown1");
 
   const handelsearch = () => {
     const enCodedParams = createSearchParams({
@@ -59,22 +56,6 @@ function Header() {
         </div>
         <div className="headerSearchItem">
           <CalendarDaysIcon className="icon-calender" />
-          {/* <div className="dateDropDown" id="dateDropdown1" onClick={() => setOpendate(!openDate)}>
-            {`${format(date[0].startDate, "yyyy/MM/dd")} to ${format(
-              date[0].endDate,
-              "yyyy/MM/dd"
-            )}`}
-          </div>
-          {openDate && (
-            <div ref={dateref}>
-              <DateRange
-                onChange={(item) => setdate([item.selection])}
-                ranges={date}
-                className="date"
-                minDate={new Date()}
-              />
-            </div>
-          )} */}
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
