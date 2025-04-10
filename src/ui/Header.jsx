@@ -38,7 +38,8 @@ function Header() {
       searchvalue: searchvalue,
       room: JSON.stringify(option.room),
     });
-   navigate(`/?${enCodedParams}`);
+    navigate(`/?${enCodedParams}`);
+
   };
 
   return (

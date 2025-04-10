@@ -1,28 +1,15 @@
-
-import {useEffect, useState} from "react";
-import toast from "react-hot-toast";
+import {useQuery} from "@tanstack/react-query";
+import {useParams} from "react-router-dom";
 import { getHotelsId } from "../../services/HotelServic";
-
-function useHotelId(id) {
-  const [data, setdata] = useState([]);  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-        const { data } = await getHotelsId(id);
-        setdata(data); 
-        setIsLoading(false);
-      } catch (err) {
-        setdata([]);
-        toast.error(err.message);
-      } finally {
-          setIsLoading(false);
-      }
-    }
-    fetchData();
-  }, [id]);
-
+function useHotel() {
+  const {id} = useParams();
+  const {data, isLoading} = useQuery({
+    queryKey: ["get-Hotel", id],
+    queryFn: () => getHotelsId(id),
+    refetchOnWindowFocus: true,
+  });
+  console.log(data);
   return {data, isLoading};
 }
 
-export default useHotelId;
+export default useHotel;

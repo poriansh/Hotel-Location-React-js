@@ -120,6 +120,11 @@
   color: #fff;
   padding: 0.4rem;
   border-radius: 0.6rem;
+  transition: all 150ms ease-in;
+
+}
+.headerSearchBtn:hover{
+  box-shadow: 4px 4px 10PX var(--primary-600)
 }
 
 /*  location list */
@@ -136,6 +141,7 @@ grid-template-columns: 1fr;
 .locationItem img {
   width: 100%;
   height: 20rem;
+  max-height: 20rem;
   object-fit: cover;
   object-position: center;
   border-radius: 0.5rem;
@@ -149,8 +155,12 @@ grid-template-columns: 1fr;
 .locationItem .locationItemDesc .name {
   color: var(--text-400);
 }
-.locationItem .locationItemDesc .location {
+.locationItem .locationItemDesc .locaiton {
   font-weight: 500;
+  transition: all  150ms ease-in ;
+}
+.locationItem .locationItemDesc .locaiton:hover{
+  color: var(--primary-600);
 }
 .locationItem .locationItemDesc .price {
   font-weight: 500;
@@ -423,4 +433,37 @@ a.active {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+
+}
+.pagination button{
+  font-size: 1rem;
+  background-color: #Fff;
+  color:  var(--primary-600);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border : 2px solid  var(--primary-600);
+  transition: all ease-in 150ms;
+
+}
+.pagination button:hover{
+  font-size: 1rem;
+  background-color: var(--primary-600);
+  color:  #FfF;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border : 2px solid  var(--primary-600);
+
+}
+.pagination button:disabled{
+  opacity: 0.5; 
+}
+.pagination button:disabled:hover {
+  background-color: transparent; 
+  color: inherit; 
 }

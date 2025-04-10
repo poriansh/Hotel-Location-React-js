@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
-import useHotelId from "./useHotel";
+
 import Loader from "../../ui/Loader";
+import useHotel from './useHotel';
 
 function Singlehotel() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { data: Hotel, isLoading } = useHotelId(id);
+  const { data: Hotel, isLoading } = useHotel();
   if (isLoading) return <Loader />;
   return (
     <div className="room">
