@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useSearchParams} from "react-router-dom";
+import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import Loader from "../../ui/Loader";
 import useHotels from "./useHotels";
 import Hotelsitem from "./Hotelsitem";
@@ -68,4 +68,3 @@ function Hotels() {
 }
 
 export default Hotels;
-

@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon} from "@heroicons/react/20/solid";
+import {MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 import {useReducer, useRef, useState} from "react";
 import {MdLocationOn} from "react-icons/md";
 import {createSearchParams, NavLink, useNavigate} from "react-router-dom";
@@ -36,12 +36,10 @@ function Header() {
       room: JSON.stringify(option.room),
     });
     navigate(`/?${enCodedParams}`);
-
   };
 
   return (
     <div className="header">
-      <NavLink to={"/"}>Home</NavLink>
       <div className="headerSearch">
         <div className="headerSearchItem">
           <MdLocationOn />
@@ -52,13 +50,6 @@ function Header() {
             placeholder="where to go ?"
             className="headerSearchInput"
           />
-          <span className="seperator"></span>
-        </div>
-        {/* <div className="headerSearchItem">
-          <CalendarDaysIcon className="icon-calender" />
-          <span className="seperator"></span>
-        </div> */}
-        <div className="headerSearchItem">
           <div id="optionDropdown" onClick={() => setopenoption(!openOption)}>
             room
           </div>
@@ -66,6 +57,8 @@ function Header() {
             <SearchOption option={option} dispatch={dispatch} setopenoption={setopenoption} />
           )}
           <span className="seperator"></span>
+          <NavLink to={"/"}>Home</NavLink>
+          <NavLink to={"/"}>Login</NavLink>
         </div>
         <div className="headerSearchItem">
           <button onClick={handelsearch} className="headerSearchBtn">

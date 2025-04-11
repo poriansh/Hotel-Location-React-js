@@ -30,6 +30,7 @@
 .headerSearchItem {
   display: flex;
   align-items: center;
+  gap: 1rem;
   position: relative;
 }
 .headerSearchItem .seperator {
@@ -59,10 +60,10 @@
   padding: 1rem;
   border: 1px solid var(--text-100);
   position: absolute;
-  top: 2rem;
+  top: 2.5rem ;
   width: 220px;
   z-index: 1000;
-  right: 0;
+  right: -5rem;
 }
 .guestOptionItem {
   display: flex;
