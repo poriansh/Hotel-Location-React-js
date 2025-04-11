@@ -31,7 +31,6 @@ function Header() {
 
   const handelsearch = () => {
     const enCodedParams = createSearchParams({
-      // date: JSON.stringify(date),
       searchvalue: searchvalue,
       room: JSON.stringify(option.room),
     });
@@ -58,7 +57,7 @@ function Header() {
           )}
           <span className="seperator"></span>
           <NavLink to={"/"}>Home</NavLink>
-          <NavLink to={"/"}>Login</NavLink>
+          <NavLink to={"/Login"}>Login</NavLink>
         </div>
         <div className="headerSearchItem">
           <button onClick={handelsearch} className="headerSearchBtn">

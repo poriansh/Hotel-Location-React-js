@@ -1,4 +1,3 @@
-
 import http from "./httpservic";
 export function getHotels(query) {
   return http.get(`/hotels?${query}`).then((res) => ({
@@ -9,4 +8,7 @@ export function getHotels(query) {
 
 export function getHotelsId(id) {
   return http.get(`/hotels/${id}`).then(({data}) => data);
+}
+export function AddHotel(newHotel) {
+  return http.post(`/hotels/`, newHotel).then(({data}) => data);
 }

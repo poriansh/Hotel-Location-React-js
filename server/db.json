@@ -1,101 +1,103 @@
 {
   "hotels": [
-      {
-        "id": "6017649",
-        "name": "Nice room at Vondelpark",
-        "thumbnail_url": "./public/img/1.jpg",
-        "xl_picture_url": "/public/img/1.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 50,
-        "accommodates": 2,
-        "children": 5
-      },
-      {
-        "id": "6017650",
-        "name": "Cozy apartment in Amsterdam",
-        "thumbnail_url": "./public/img/2.jpg",
-        "xl_picture_url": "/public/img/2.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 75,
-        "accommodates": 4,
-        "children": 2
-      },
-      {
-        "id": "6017651",
-        "name": "Luxurious studio near city center",
-        "thumbnail_url": "./public/img/3.jpg",
-        "xl_picture_url": "/public/img/3.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 120,
-        "accommodates": 3,
-        "children": 0
-      },
-      {
-        "id": "6017652",
-        "name": "Modern apartment with a view",
-        "thumbnail_url": "./public/img/4.jpg",
-        "xl_picture_url": "/public/img/4.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 95,
-        "accommodates": 2,
-        "children": 1
-      },
-      {
-        "id": "6017653",
-        "name": "Spacious family apartment",
-        "thumbnail_url": "./public/img/5.jpg",
-        "xl_picture_url": "/public/img/5.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 85,
-        "accommodates": 6,
-        "children": 3
-      },
-      {
-        "id": "6017654",
-        "name": "Charming flat near Vondelpark",
-        "thumbnail_url": "./public/img/6.jpg",
-        "xl_picture_url": "/public/img/6.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 65,
-        "accommodates": 2,
-        "children": 0
-      },
-      {
-        "id": "6017655",
-        "name": "Beautiful penthouse with terrace",
-        "thumbnail_url": "./public/img/7.jpg",
-        "xl_picture_url": "/public/img/7.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 150,
-        "accommodates": 4,
-        "children": 4
-      },
-      {
-        "id": "6017656",
-        "name": "Cozy home in the heart of Amsterdam",
-        "thumbnail_url": "./public/img/8.jpg",
-        "xl_picture_url": "/public/img/8.jpg",
-        "city": "Amsterdam",
-        "smart_location": "Amsterdam, Netherlands",
-        "country": "Netherlands",
-        "price": 60,
-        "accommodates": 2,
-        "children": 1
-      }
-    ]
-
+    {
+      "id": "6017649",
+      "name": "Nice room at Vondelpark",
+      "thumbnail_url": "/public/img/1.jpg",
+      "xl_picture_url": "/public/img/1.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 50,
+      "accommodates": 2
+    },
+    {
+      "id": "6017650",
+      "name": "Cozy apartment in Amsterdam",
+      "thumbnail_url": "/public/img/2.jpg",
+      "xl_picture_url": "/public/img/2.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 75,
+      "accommodates": 4
+    },
+    {
+      "id": "6017651",
+      "name": "Luxurious studio near city center",
+      "thumbnail_url": "/public/img/3.jpg",
+      "xl_picture_url": "/public/img/3.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 120,
+      "accommodates": 3
+    },
+    {
+      "id": "6017652",
+      "name": "Modern apartment with a view",
+      "thumbnail_url": "/public/img/4.jpg",
+      "xl_picture_url": "/public/img/4.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 95,
+      "accommodates": 2
+    },
+    {
+      "id": "6017653",
+      "name": "Spacious family apartment",
+      "thumbnail_url": "/public/img/5.jpg",
+      "xl_picture_url": "/public/img/5.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 85,
+      "accommodates": 6
+    },
+    {
+      "id": "6017654",
+      "name": "Charming flat near Vondelpark",
+      "thumbnail_url": "/public/img/6.jpg",
+      "xl_picture_url": "/public/img/6.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 65,
+      "accommodates": 2
+    },
+    {
+      "id": "6017655",
+      "name": "Beautiful penthouse with terrace",
+      "thumbnail_url": "/public/img/7.jpg",
+      "xl_picture_url": "/public/img/7.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 150,
+      "accommodates": 4
+    },
+    {
+      "id": "6017656",
+      "name": "Cozy home in the heart of Amsterdam",
+      "thumbnail_url": "/public/img/8.jpg",
+      "xl_picture_url": "/public/img/8.jpg",
+      "smart_location": "Amsterdam, Netherlands",
+      "price": 60,
+      "accommodates": 2
+    },
+    {
+      "id": 1744379372258,
+      "name": "sdvsdv",
+      "smart_location": "vsdvd",
+      "price": 800000,
+      "accommodates": 10,
+      "thumbnail_url": "/public/img/2.jpg",
+      "xl_picture_url": "/public/img/2.jpg"
+    },
+    {
+      "id": 1744379386929,
+      "name": "bgb",
+      "smart_location": "bdfbfdb",
+      "price": 7000000,
+      "accommodates": 10,
+      "thumbnail_url": "/public/img/5.jpg",
+      "xl_picture_url": "/public/img/5.jpg"
+    },
+    {
+      "id": 1744379555174,
+      "name": "cdscds",
+      "smart_location": "csdcdsc",
+      "price": 902,
+      "accommodates": 1412,
+      "thumbnail_url": "/public/img/7.jpg",
+      "xl_picture_url": "/public/img/7.jpg"
+    }
+  ]
 }

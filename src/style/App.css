@@ -20,7 +20,7 @@
   cursor: pointer;
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.249);
-  border-radius: 0.4rem ;
+  border-radius: 0.4rem;
   padding: 0.3rem 0.8rem;
 }
 .headerSearchInput {
@@ -60,7 +60,7 @@
   padding: 1rem;
   border: 1px solid var(--text-100);
   position: absolute;
-  top: 2.5rem ;
+  top: 2.5rem;
   width: 220px;
   z-index: 1000;
   right: -5rem;
@@ -122,10 +122,9 @@
   padding: 0.4rem;
   border-radius: 0.6rem;
   transition: all 150ms ease-in;
-
 }
-.headerSearchBtn:hover{
-  box-shadow: 4px 4px 10PX var(--primary-600)
+.headerSearchBtn:hover {
+  box-shadow: 4px 4px 10px var(--primary-600);
 }
 
 /*  location list */
@@ -135,7 +134,7 @@
 }
 .locationList {
   display: grid;
-grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -158,9 +157,9 @@ grid-template-columns: 1fr;
 }
 .locationItem .locationItemDesc .locaiton {
   font-weight: 500;
-  transition: all  150ms ease-in ;
+  transition: all 150ms ease-in;
 }
-.locationItem .locationItemDesc .locaiton:hover{
+.locationItem .locationItemDesc .locaiton:hover {
   color: var(--primary-600);
 }
 .locationItem .locationItemDesc .price {
@@ -187,7 +186,6 @@ grid-template-columns: 1fr;
 .roomDetail h2 {
   margin-bottom: 0.3rem;
   font-size: 1rem;
-
 }
 .roomDetail > div {
   margin-bottom: 1rem;
@@ -233,9 +231,9 @@ grid-template-columns: 1fr;
   display: flex;
   gap: 1rem;
 }
-.searchList__werraper{
+.searchList__werraper {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 .searchList .searchItem img {
@@ -285,7 +283,6 @@ grid-template-columns: 1fr;
   border-radius: 1rem;
   padding: 0.5rem;
 }
-
 
 /* bookmark page */
 .bookmarkList {
@@ -398,35 +395,35 @@ a.active {
   width: 25px;
   height: 25px;
 }
-.active{
+.active {
   color: blue;
 }
-.locationItem--view{
-  border:  3px rgba(92, 7, 195, 0.532) solid;
+.locationItem--view {
+  border: 3px rgba(92, 7, 195, 0.532) solid;
   border-radius: 10px;
   padding: 0.5rem;
 }
-@media (min-width : 600px){
-  .locationList{
-    grid-template-columns: repeat(2,1fr);
+@media (min-width: 600px) {
+  .locationList {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width : 900px){
-  .locationList{
-    grid-template-columns:repeat(3,1fr);
+@media (min-width: 900px) {
+  .locationList {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-.singlehotel{
+.singlehotel {
   display: flex;
-  gap: 2rem ;
+  gap: 2rem;
 }
-.singlehotel img{
+.singlehotel img {
   max-width: 40rem;
   height: 100%;
   object-fit: cover;
   flex-grow: 1;
 }
-.singlehotel .locationItemDesc{
+.singlehotel .locationItemDesc {
   flex-grow: 1;
 }
 .navlocation-werraper {
@@ -435,36 +432,42 @@ a.active {
   align-items: center;
   margin-bottom: 2rem;
 }
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
-
 }
-.pagination button{
+.pagination button {
   font-size: 1rem;
-  background-color: #Fff;
-  color:  var(--primary-600);
+  background-color: #fff;
+  color: var(--primary-600);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  border : 2px solid  var(--primary-600);
+  border: 2px solid var(--primary-600);
   transition: all ease-in 150ms;
-
 }
-.pagination button:hover{
+.pagination button:hover {
   font-size: 1rem;
   background-color: var(--primary-600);
-  color:  #FfF;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  border : 2px solid  var(--primary-600);
-
+  border: 2px solid var(--primary-600);
 }
-.pagination button:disabled{
-  opacity: 0.5; 
+.pagination button:disabled {
+  opacity: 0.5;
 }
 .pagination button:disabled:hover {
-  background-color: transparent; 
-  color: inherit; 
+  background-color: transparent;
+  color: inherit;
+}
+.Addhotel {
+  text-align: center;
+  margin-top: 2rem;
+}
+.Addhotel-werraper {
+  margin-top: 1rem;
+  max-width: 400px;
+  margin-inline: auto;
 }
