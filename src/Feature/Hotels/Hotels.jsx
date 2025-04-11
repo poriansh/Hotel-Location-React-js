@@ -1,6 +1,7 @@
-import {Link, useLocation, useNavigate, useSearchParams} from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import Loader from "../../ui/Loader";
 import useHotels from "./useHotels";
+import Hotelsitem from "./Hotelsitem";
 
 function Hotels() {
   const [searchparams] = useSearchParams();
@@ -68,19 +69,3 @@ function Hotels() {
 
 export default Hotels;
 
-function Hotelsitem({item, viewedId}) {
-  return (
-    <div className={`locationItem ${item.id === viewedId ? "locationItem--view" : ""}`}>
-      <img  src={item.thumbnail_url} alt={item.name} />
-      <div className="locationItemDesc">
-        <Link to={`Hotel/${item.id}`}>
-          <p className="locaiton">{item.smart_location}</p>
-        </Link>
-        <p className="name">{item.name}</p>
-        <p className="price">
-          €&nbsp;{item.price}&nbsp;<span>night</span>
-        </p>
-      </div>
-    </div>
-  );
-}
