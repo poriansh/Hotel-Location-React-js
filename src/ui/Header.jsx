@@ -1,4 +1,4 @@
-import {CalendarDaysIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
+import { MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 import {useReducer, useRef, useState} from "react";
 import {MdLocationOn} from "react-icons/md";
 import {createSearchParams, NavLink, useNavigate} from "react-router-dom";
@@ -54,10 +54,10 @@ function Header() {
           />
           <span className="seperator"></span>
         </div>
-        <div className="headerSearchItem">
+        {/* <div className="headerSearchItem">
           <CalendarDaysIcon className="icon-calender" />
           <span className="seperator"></span>
-        </div>
+        </div> */}
         <div className="headerSearchItem">
           <div id="optionDropdown" onClick={() => setopenoption(!openOption)}>
             room
