@@ -25,6 +25,7 @@ function AddHotel() {
       toast.error("Please fill all fields");
       return;
     }
+    
     const newHotel = {
       id: Date.now(),
       name: Name,
@@ -80,6 +81,7 @@ function AddHotel() {
               type="number"
               name="room"
               id="room"
+              max={5}
             />
           </div>
           <div className="buttons">

@@ -98,6 +98,15 @@
       "accommodates": 1412,
       "thumbnail_url": "/public/img/7.jpg",
       "xl_picture_url": "/public/img/7.jpg"
+    },
+    {
+      "id": 1744379858464,
+      "name": "رسیریریس",
+      "smart_location": "باذبسظ",
+      "price": 2453533,
+      "accommodates": 5,
+      "thumbnail_url": "/public/img/6.jpg",
+      "xl_picture_url": "/public/img/6.jpg"
     }
   ]
 }

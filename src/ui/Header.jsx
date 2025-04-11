@@ -76,12 +76,12 @@ function SearchOption({option, dispatch, setopenoption}) {
   useClickside(ref, () => setopenoption(false), "optionDropdown");
   return (
     <div className="guestOptions" ref={ref}>
-      <Optionitem option={option} dispatch={dispatch} type="room" minLimit={1} />
+      <Optionitem option={option} dispatch={dispatch} type="room" minLimit={1} maxLimit={5} />
     </div>
   );
 }
 
-function Optionitem({type, minLimit, option, dispatch}) {
+function Optionitem({type, minLimit, maxLimit, option, dispatch}) {
   return (
     <div className="guestOptionItem">
       <span className="optionText">{type}</span>
@@ -94,7 +94,11 @@ function Optionitem({type, minLimit, option, dispatch}) {
           -
         </button>
         <span className="">{option[type]}</span>
-        <button onClick={() => dispatch({type: "inc", payload: type})} className="optionCounterBtn">
+        <button
+          onClick={() => dispatch({type: "inc", payload: type})}
+          className="optionCounterBtn"
+          disabled={option[type] >= maxLimit}
+        >
           +
         </button>
       </div>
