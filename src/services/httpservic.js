@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const app = axios.create({
-  baseURL: "https://server-hotel-production-b8e7.up.railway.app/api",
+  baseURL: "https://server-hotel-production-e1e1.up.railway.app/api",
 });
 
 const http = {
