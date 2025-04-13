@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const app = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://server-hotel-production-b8e7.up.railway.app/api",
 });
 
 const http = {
