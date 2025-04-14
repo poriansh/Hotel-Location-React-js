@@ -14,7 +14,7 @@ function AddHotel() {
 
   const getRandomImage = () => {
     const randomIndex = Math.floor(Math.random() * 8) + 1;
-    return `/public/img/${randomIndex}.jpg`;
+    return `/img/${randomIndex}.jpg`;
   };
 
   const imagePath = getRandomImage();
