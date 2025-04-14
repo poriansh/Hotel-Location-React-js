@@ -35,8 +35,14 @@ function AddHotel() {
       thumbnail_url: imagePath,
       xl_picture_url: imagePath,
     };
-    await AddNewHotel(newHotel);
-    navigate("/");
+
+    try {
+      await AddNewHotel(newHotel);
+      toast.success("Hotel Added Successfully");
+      navigate("/");
+    } catch (err) {
+      toast.error("Error Adding Hotel");
+    }
   };
 
   return (
@@ -46,7 +52,7 @@ function AddHotel() {
         <form className="space-y-4" onSubmit={handelsubmit}>
           <TextFielde
             lable="name"
-            value={Name}  
+            value={Name}
             onChange={(e) => setName(e.target.value)}
             type="text"
             id="name"
