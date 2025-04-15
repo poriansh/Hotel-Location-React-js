@@ -44,6 +44,10 @@ const handelsearch = () => {
     <div className="bg-white border border-gray-300 rounded-3xl py-4 px-6">
       <div className="flex flex-wrap justify-between items-center gap-4">
         <div className="flex items-center gap-4 flex-wrap">
+          <NavLink to="/" className="text-sm font-medium  hover:underline transition">
+            Home
+          </NavLink>
+          <span className="h-5 w-px bg-gray-300 mx-2"></span>
           <div className="flex items-center gap-2 bg-gray-100 p-2 rounded-md">
             <MdLocationOn className="text-xl" />
             <input
@@ -84,10 +88,6 @@ const handelsearch = () => {
               onChange={setDate}
             />
           </div>
-          <span className="h-5 w-px bg-gray-300 mx-2"></span>
-          <NavLink to="/" className="text-sm font-medium  hover:underline transition">
-            Home
-          </NavLink>
         </div>
         <div>
           <button
