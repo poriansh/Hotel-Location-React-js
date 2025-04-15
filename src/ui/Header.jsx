@@ -3,6 +3,10 @@ import {useReducer, useRef, useState} from "react";
 import {MdLocationOn} from "react-icons/md";
 import {createSearchParams, NavLink, useNavigate} from "react-router-dom";
 import useClickside from "../hooks/useClickside";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import English from "react-date-object/locales/persian_en";
+import "react-multi-date-picker/styles/colors/teal.css";
 
 function optionReducer(option, {type, payload}) {
   switch (type) {
@@ -18,16 +22,23 @@ function optionReducer(option, {type, payload}) {
 function Header() {
   const [openOption, setopenoption] = useState(false);
   const [searchvalue, setsearchvalue] = useState("");
+  const [date, setDate] = useState(null);
   const navigate = useNavigate();
   const [option, dispatch] = useReducer(optionReducer, {room: 1});
 
-  const handelsearch = () => {
-    const enCodedParams = createSearchParams({
-      searchvalue: searchvalue,
-      room: JSON.stringify(option.room),
-    });
-    navigate(`/?${enCodedParams}`);
-  };
+const handelsearch = () => {
+  const formatDateOnly = (dateObj) => dateObj.toISOString().split("T")[0];
+
+  const enCodedParams = createSearchParams({
+    searchvalue: searchvalue,
+    room: JSON.stringify(option.room),
+    date: date ? formatDateOnly(date.toDate()) : "",
+  });
+
+  navigate(`/?${enCodedParams}`);
+};
+
+
 
   return (
     <div className="bg-white border border-gray-300 rounded-3xl py-4 px-6">
@@ -60,12 +71,25 @@ function Header() {
               />
             )}
           </div>
+          <div>
+            <DatePicker
+              calendar={persian}
+              inputClass="w-[170px] text-sm py-2 px-3 bg-gray-100 rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+              containerClass="z-[100]"
+              className="teal"
+              placeholder="Travel date"
+              hideWeekDays
+              locale={English}
+              value={date}
+              onChange={setDate}
+            />
+          </div>
           <span className="h-5 w-px bg-gray-300 mx-2"></span>
           <NavLink to="/" className="text-sm font-medium  hover:underline transition">
             Home
           </NavLink>
         </div>
-        <div >
+        <div>
           <button
             onClick={handelsearch}
             className="bg-[var(--primary-600)] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"

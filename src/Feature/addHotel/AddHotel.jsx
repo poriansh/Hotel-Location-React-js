@@ -3,6 +3,10 @@ import useAddHotel from "./useAddHotel";
 import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import TextFielde from "../../ui/TextFielde";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import English from "react-date-object/locales/persian_en";
+import "react-multi-date-picker/styles/colors/teal.css";
 
 function AddHotel() {
   const [Name, setName] = useState("");
@@ -10,6 +14,7 @@ function AddHotel() {
   const [Price, setPrice] = useState(0);
   const [room, setroom] = useState(1);
   const {AddNewHotel} = useAddHotel();
+  const [date, setDate] = useState(null);
   const navigate = useNavigate();
 
   const getRandomImage = () => {
@@ -21,11 +26,11 @@ function AddHotel() {
 
   const handelsubmit = async (e) => {
     e.preventDefault();
-    if (!Name || !Loacation || Price <= 0 || room <= 0) {
+    if (!Name || !Loacation || Price <= 0 || room <= 0 || !date) {
       toast.error("Please fill all fields");
       return;
     }
-
+    const formatDateOnly = (dateObj) => dateObj.toISOString().split("T")[0];
     const newHotel = {
       id: Date.now(),
       name: Name,
@@ -34,6 +39,7 @@ function AddHotel() {
       accommodates: room,
       thumbnail_url: imagePath,
       xl_picture_url: imagePath,
+      date:  formatDateOnly(date.toDate()) 
     };
 
     try {
@@ -78,6 +84,23 @@ function AddHotel() {
             type="number"
             id="room"
           />
+          <div className="flex flex-col gap-1">
+            <label htmlFor="date" className="mb-1 text-sm text-[var(--text-500)]">
+              Travel Date
+            </label>
+            <DatePicker
+              id="date"
+              calendar={persian}
+              inputClass="w-[170px] text-sm py-2 px-3 bg-gray-100 rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+              containerClass="z-[100]"
+              className="teal"
+              placeholder="Travel date"
+              hideWeekDays
+              locale={English}
+              value={date}
+              onChange={setDate}
+            />
+          </div>
           <div className="flex items-center justify-between mt-6">
             <button
               type="button"

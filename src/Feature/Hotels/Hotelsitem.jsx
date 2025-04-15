@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import { faToEn } from './../../utils/toLocalDate';
+import {toLocalDate} from "./../../utils/toLocalDate";
 
-function Hotelsitem({ item, viewedId }) {
+function Hotelsitem({item, viewedId}) {
   return (
     <div
       className={`rounded-xl overflow-hidden shadow-md bg-white transition border-2 ${
@@ -17,6 +19,12 @@ function Hotelsitem({ item, viewedId }) {
         <p className="text-[var(--text-700)] font-semibold">{item.name}</p>
         <p className="text-[var(--text-400)]">
           € {item.price} <span className="text-xs">night</span>
+        </p>
+        <p className=" text-[var(--text-400)]">
+          {
+            item.date ? <span className=" text-[var(--text-700)] font-semibold">Travel Date : </span> : null
+          }
+          {faToEn(toLocalDate(item.date))}
         </p>
       </div>
     </div>

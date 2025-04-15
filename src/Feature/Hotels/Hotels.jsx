@@ -6,16 +6,18 @@ import Hotelsitem from "./Hotelsitem";
 function Hotels() {
   const [searchparams] = useSearchParams();
   const searchvalue = searchparams.get("searchvalue");
+  const date = searchparams.get("date");
   const room = searchparams.get("room");
   const page = Number(searchparams.get("page")) || 1;
   const pageSize = 5;
 
   const hasParams = searchparams.toString().length > 0;
-  const query = hasParams
-    ? `${searchvalue ? `q=${searchvalue}&` : ""}${
-        room ? `accommodates=${room}&` : ""
-      }_page=${page}&_limit=${pageSize}`
-    : `_page=${page}&_limit=${pageSize}`;
+const query = hasParams
+  ? `${searchvalue ? `q=${searchvalue}&` : ""}${room ? `accommodates=${room}&` : ""}${
+      date ? `date=${date}&` : ""
+    }_page=${page}&_limit=${pageSize}`
+  : `_page=${page}&_limit=${pageSize}`;
+
 
   const {data: hotels, totalCount, isLoading} = useHotels(query);
   const totalPages = Math.ceil(totalCount / pageSize);

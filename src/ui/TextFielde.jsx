@@ -2,7 +2,7 @@
 function TextFielde({lable, value, onChange, type, id}) {
   return (
     <div className="flex flex-col">
-      <label htmlFor="name" className="mb-1 text-sm text-[var(--text-500)]">
+      <label htmlFor={id} className="mb-1 text-sm text-[var(--text-500)]">
         {lable}
       </label>
       <input
