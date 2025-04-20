@@ -2,6 +2,7 @@ import {useQuery} from "@tanstack/react-query";
 import {getHotels} from "../../services/HotelServic";
 
 function useHotels(query) {
+  
   const {data, isLoading} = useQuery({
     queryKey: ["get-Hotels", query],
     queryFn: () => getHotels(query),

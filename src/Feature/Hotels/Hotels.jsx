@@ -53,7 +53,7 @@ const query = hasParams
         <button
           onClick={() => {
             const newParams = new URLSearchParams(searchparams.toString());
-            newParams.set("page", page - 1);
+            searchparams.set("page", page - 1);
             navigate(`?${newParams.toString()}`);
           }}
           disabled={page <= 1}

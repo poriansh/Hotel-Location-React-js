@@ -1,7 +1,7 @@
 import {MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 import {useReducer, useRef, useState} from "react";
 import {MdLocationOn} from "react-icons/md";
-import {createSearchParams, NavLink, useNavigate} from "react-router-dom";
+import {NavLink, useSearchParams} from "react-router-dom";
 import useClickside from "../hooks/useClickside";
 import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
@@ -23,22 +23,21 @@ function Header() {
   const [openOption, setopenoption] = useState(false);
   const [searchvalue, setsearchvalue] = useState("");
   const [date, setDate] = useState(null);
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [option, dispatch] = useReducer(optionReducer, {room: 1});
 
-const handelsearch = () => {
-  const formatDateOnly = (dateObj) => dateObj.toISOString().split("T")[0];
+  const handelsearch = () => {
+    const formatDateOnly = (dateObj) => dateObj.toISOString().split("T")[0];
 
-  const enCodedParams = createSearchParams({
-    searchvalue: searchvalue,
-    room: JSON.stringify(option.room),
-    date: date ? formatDateOnly(date.toDate()) : "",
-  });
+    const params = {
+      searchvalue,
+      room: option.room.toString(),
+      date: date ? formatDateOnly(date.toDate()) : "",
+    };
 
-  navigate(`/?${enCodedParams}`);
-};
-
-
+    setSearchParams(params);
+    console.log(searchParams);
+  };
 
   return (
     <div className="bg-white border border-gray-300 rounded-3xl py-4 px-6">
