@@ -10,7 +10,12 @@ function Hotels() {
   const room = searchparams.get("room");
   const page = Number(searchparams.get("page")) || 1;
   const pageSize = 5;
+  const user = null;
 
+  console.log(user.name);
+  if ((a = b)) {
+    console.log("test");
+  }
   const hasParams = searchparams.toString().length > 0;
 const query = hasParams
   ? `${searchvalue ? `q=${searchvalue}&` : ""}${room ? `accommodates=${room}&` : ""}${
