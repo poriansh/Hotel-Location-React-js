@@ -11,9 +11,8 @@ function Hotels() {
   const page = Number(searchparams.get("page")) || 1;
   const pageSize = 5;
   const user = null;
-
   console.log(user.name);
-  if ((a = b)) {
+  if (user.name === "John") {
     console.log("test");
   }
   const hasParams = searchparams.toString().length > 0;
