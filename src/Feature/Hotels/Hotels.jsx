@@ -10,18 +10,18 @@ function Hotels() {
   const room = searchparams.get("room");
   const page = Number(searchparams.get("page")) || 1;
   const pageSize = 5;
+
+  const hasParams = searchparams.toString().length > 0;
+  const query = hasParams
+    ? `${searchvalue ? `q=${searchvalue}&` : ""}${room ? `accommodates=${room}&` : ""}${
+        date ? `date=${date}&` : ""
+      }_page=${page}&_limit=${pageSize}`
+    : `_page=${page}&_limit=${pageSize}`;
   const user = null;
   console.log(user.name);
   if (user.name === "John") {
     console.log("test");
   }
-  const hasParams = searchparams.toString().length > 0;
-const query = hasParams
-  ? `${searchvalue ? `q=${searchvalue}&` : ""}${room ? `accommodates=${room}&` : ""}${
-      date ? `date=${date}&` : ""
-    }_page=${page}&_limit=${pageSize}`
-  : `_page=${page}&_limit=${pageSize}`;
-
 
   const {data: hotels, totalCount, isLoading} = useHotels(query);
   const totalPages = Math.ceil(totalCount / pageSize);
@@ -36,7 +36,9 @@ const query = hasParams
     <div className="space-y-6 px-4 py-6 rounded-xl ">
       {/* Header */}
       <div className="flex flex-col sm:flex-row gap-3 justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-[var(--text-700)]">Nearby Locations</h2>
+        <h2 className="text-xl font-semibold text-[var(--text-700)]">
+          Nearby Locations
+        </h2>
         <button
           onClick={() => navigate("/Hotel/add")}
           className="bg-[var(--primary-600)] w-full sm:w-auto  text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
