@@ -17,11 +17,6 @@ function Hotels() {
         date ? `date=${date}&` : ""
       }_page=${page}&_limit=${pageSize}`
     : `_page=${page}&_limit=${pageSize}`;
-  const user = null;
-  console.log(user.name);
-  if (user.name === "John") {
-    console.log("test");
-  }
 
   const {data: hotels, totalCount, isLoading} = useHotels(query);
   const totalPages = Math.ceil(totalCount / pageSize);
